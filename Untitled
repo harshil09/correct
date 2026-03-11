@@ -1,0 +1,8 @@
+from concurrent.futures import ThreadPoolExecutor
+
+def task(name):
+    print(f"{name} is running")
+
+with ThreadPoolExecutor(max_workers=2) as executor:
+    executor.submit(task, "User-1")
+    executor.submit(task, "User-2")
